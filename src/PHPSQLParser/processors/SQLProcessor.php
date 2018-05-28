@@ -63,7 +63,7 @@ class SQLProcessor extends SQLChunkProcessor {
 
         $tokenCount = count($tokens);
         for ($tokenNumber = 0; $tokenNumber < $tokenCount; ++$tokenNumber) {
-
+            if (!isset($tokens[$tokenNumber])) continue;// as a fix by Sinri 20180528
             $token = $tokens[$tokenNumber];
             $trim = trim($token); // this removes also \n and \t!
 

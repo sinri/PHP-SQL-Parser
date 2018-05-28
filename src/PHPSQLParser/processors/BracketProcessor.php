@@ -78,6 +78,7 @@ class BracketProcessor extends AbstractProcessor {
 
     private function getRemainingNotBracketExpression($subtree)
     {
+        if (empty($subtree)) $subtree = array();// as a fix by Sinri 20180528
         $remainingExpressions = array();
         $ignoredKeys = array('BRACKET', 'SELECT', 'FROM');
         $subtreeKeys = array_keys($subtree);
